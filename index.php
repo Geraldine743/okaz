@@ -1,10 +1,8 @@
 <?php require_once 'templates/header.php';
+require_once 'libs/listing.php';
 
-$listings = [
-    ["title" => "Annonce 1", "price" => 30, "image" => "chaise.jpg"],
-    ["title" => "Annonce 2", "price" => 50, "image" => "mario.jpg"],
-    ["title" => "Annonce 3", "price" => 1600, "image" => "telephone.jpg"],
-];
+
+$listings = getListing();
 
 $categories = [
     ["name" => "Jeux vidéo", "icon" => "controller"],
