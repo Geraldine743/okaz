@@ -14,7 +14,7 @@
     <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <div class="col-md-3 mb-2 mb-md-0">
-                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                <a href="index.php" class="d-inline-flex link-body-emphasis text-decoration-none">
                     <img width="120" src="assets/images/logo-okaz.png" alt="Logo Okaz">
                 </a>
             </div>
@@ -26,8 +26,8 @@
                 <li><a href="#" class="nav-link px-2">A propos</a></li>
             </ul>
             <div class="col-md-3 text-end">
-                <button type="button" class="btn btn-outline-primary me-2">S'inscrire</button>
-                <button type="button" class="btn btn-primary">Connexion</button>
+                <a href="login.php" class="btn btn-outline-primary me-2">Se connecter</a>
+                <button type="button" class="btn btn-primary">S'inscrire</button>
             </div>
         </header>
 
