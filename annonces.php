@@ -1,7 +1,6 @@
 <?php require_once 'templates/header.php';
 require_once 'libs/listing.php';
-
-$listings = getListing();
+$listings = getListing($id);
 ?>
 
 <div class="row">
@@ -34,7 +33,7 @@ $listings = getListing();
     </div>
     <div class="col-md-9">
         <div class="row">
-            <?php foreach ($listings as $listing) {
+            <?php foreach ($listings as $key => $listing) {
                 require 'templates/listing_part.php';
             } ?>
         </div>
