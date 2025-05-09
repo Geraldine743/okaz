@@ -27,7 +27,7 @@
             </ul>
             <div class="col-md-3 text-end">
                 <a href="login.php" class="btn btn-outline-primary me-2">Se connecter</a>
-                <button type="button" class="btn btn-primary">S'inscrire</button>
+                <a href="inscription.php" class="btn btn-primary">S'inscrire</a>
             </div>
         </header>
 
