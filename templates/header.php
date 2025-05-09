@@ -21,7 +21,7 @@
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="index.php" class="nav-link px-2 link-secondary">Accueil</a></li>
                 <li><a href="annonces.php" class="nav-link px-2">Les annonces</a></li>
-                <li><a href="#" class="nav-link px-2">Les catégories</a></li>
+                <li><a href="ajout_annonce.php" class="nav-link px-2">Ajouter une annonce</a></li>
                 <li><a href="#" class="nav-link px-2">FAQs</a></li>
                 <li><a href="#" class="nav-link px-2">A propos</a></li>
             </ul>

@@ -1,6 +1,6 @@
 <?php require_once 'templates/header.php';
 require_once 'libs/listing.php';
-$listings = getListing($id);
+$listings = getListing();
 ?>
 
 <div class="row">

@@ -2,7 +2,7 @@
 
 <div class="form-signin w-100 m-auto">
     <form method="post">
-        <h1 class="h3 mb-3 fw-normal">Se connecter</h1>
+        <h1 class="h1 mb-3 fw-normal">Se connecter</h1>
         <div class="form-floating">
             <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
             <label for="email">Email</label>

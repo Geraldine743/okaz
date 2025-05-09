@@ -1,14 +1,11 @@
 <?php require_once 'templates/header.php';
 require_once 'libs/listing.php';
+require_once 'libs/category.php';
 
 
 $listings = getListing();
 
-$categories = [
-    ["name" => "Jeux vidéo", "icon" => "controller"],
-    ["name" => "Vetements", "icon" => "lamp"],
-    ["name" => "Mobilier", "icon" => "tag"]
-];
+$categories = getCategories();
 
 ?>
 
