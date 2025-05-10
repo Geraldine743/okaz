@@ -22,3 +22,8 @@
 ## TP d'Anthony Laplane :
 
 - fichier CSS non codé mais recupéré.
+
+## Installation :
+
+- Créer et importer la base de données.
+- Dupliquer le ficher .env.example, le renommer en .env et modifier les informations.
