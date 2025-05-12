@@ -1,0 +1,53 @@
+<?php
+
+function addUser(PDO $pdo, string $username, string $email, string $password): bool
+{
+    $query = $pdo->prepare("INSERT INTO user (username, email, password) VALUES (:username, :email, :password)");
+    $password = password_hash($password, PASSWORD_DEFAULT);
+    $query->bindValue(':username', $username);
+    $query->bindValue(':email', $email);
+    $query->bindValue(':password', $password);
+
+    return $query->execute();
+}
+
+
+
+function verifyUser($user): array | bool
+{
+    $errors = [];
+
+    if (isset($user["username"])) {
+        if ($user["username"] === "") {
+            $errors["username"] = "Le champ nom de l'utilisateur est obligatoire";
+        }
+    } else {
+        $errors["username"] = "Le champ nom de l'utilisateur n'a pas été envoyé";
+    }
+
+    if (isset($user["email"])) {
+        if ($user["email"] === "") {
+            $errors["email"] = "Le champ email est obligatoire";
+        } else {
+            if (!filter_var($user["email"], FILTER_VALIDATE_EMAIL)) {
+                $errors["email"] = "Le format d'email n'est pas respecté";
+            }
+        }
+    } else {
+        $errors["email"] = "Le champ email n'a pas été envoyé";
+    }
+
+    if (isset($user["password"])) {
+        if (strlen($user["password"]) < 8) {
+            $errors["password"] = "Le mot de passe doit faire 8 caractère minimum";
+        }
+    } else {
+        $errors["password"] = "Le champ mot de passe n'a pas été envoyé";
+    }
+
+    if (count($errors)) {
+        return $errors;
+    } else {
+        return true;
+    }
+}
