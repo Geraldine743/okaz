@@ -1,16 +1,18 @@
 <?php
 
-function getListing(): array
+function getListing(PDO $pdo): array
 {
-    return [
-        ["title" => "Annonce 1", "price" => 30, "image" => "chaise.jpg", "description" => " Chaise très bon état"],
-        ["title" => "Annonce 2", "price" => 50, "image" => "mario.jpg", "description" => " Figurines très bon état"],
-        ["title" => "Annonce 3", "price" => 1600, "image" => "telephone.jpg", "description" => " Téléphone très bon état"],
-    ];
+    $sql = "SELECT listing.id, listing.title, listing.description, listing.image, listing.price FROM listing";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    return $query->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getListingById(int $id)
+function getListingById(PDO $pdo, int $id): array|bool
 {
-    $listings = getListing();
-    return $listings[$id];
+    $sql = "SELECT listing.id, listing.title, listing.description, listing.image, listing.price FROM listing WHERE listing.id=:id";
+    $query = $pdo->prepare($sql);
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
+    $query->execute();
+    return $query->fetch(PDO::FETCH_ASSOC);
 }

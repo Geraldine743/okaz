@@ -4,7 +4,7 @@ require_once 'libs/category.php';
 require_once 'libs/pdo.php';
 
 
-$listings = getListing();
+$listings = getListing($pdo);
 
 $categories = getCategories();
 
